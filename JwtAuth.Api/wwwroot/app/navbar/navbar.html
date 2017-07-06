@@ -1,0 +1,21 @@
+﻿
+<div ng-controller="NavbarController">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+
+			<a href="/" class="navbar-brand">JWT Auth</a>
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login"><i class="fa fa-save"></i> Login</a></li>
+				<li ng-hide="isLoggedIn()" ng-class="{active: isActive('/register')}"><a href="/register"><i class="fa fa-print"></i> Register</a></li>
+
+				<li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin"><i class="fa fa-universal-access"></i> Admin Panel</a></li>
+
+				<li ng-show="isLoggedIn()"><a href=""> Hello, {{ getCurrentUser().username }}</a></li>
+
+				<li ng-show="isLoggedIn()">
+					<a href="" ng-click="logout()"><i class="fa fa-sign-out"></i> Wyloguj</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>

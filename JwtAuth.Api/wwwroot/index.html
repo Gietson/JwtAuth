@@ -1,9 +1,52 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>index</title>
+	<!--<base href="/" />-->
+	<base href="/">
+	<title>JWT Auth</title>
+
+	<!-- bootstrap css -->
+	<link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="lib/bootswatch/superhero/bootstrap.min.css" rel="stylesheet" />
+
+	<!-- font-awesome -->
+	<link href="lib/font-awsome/css/font-awesome.min.css" rel="stylesheet" />
+
+	<!-- application css -->
+	<link href="app/site.css" rel="stylesheet" />
 </head>
-<body>
-    
+<body ng-app="app">
+
+	<!-- navbar -->
+	<div ng-include="'app/navbar/navbar.html'"></div>
+
+	<!-- main app container -->
+	<div ui-view=""></div>
+
+	<!-- footer -->
+	<div id="footer" class="container-fluid">
+		<div class="navbar navbar-default navbar-fixed-bottom">
+			<h4 class="text-center text-info">&copy; 2017 Gietson Company.</h4>
+		</div>
+	</div>
+
+	<!-- angular scripts -->
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="lib/ngstorage/ngStorage.min.js"></script>
+	<script src="lib/angular-messages/angular-messages.min.js"></script>
+	<script src="lib/angular-resource/angular-resource.min.js"></script>
+
+	<!-- application scripts -->
+	<script src="app.js"></script>
+	<script src="app/login/loginController.js"></script>
+	<script src="app/main/mainController.js"></script>
+	<script src="app/navbar/navbarController.js"></script>
+	<script src="app/register/registerController.js"></script>
+	<script src="app/admin/adminController.js"></script>
+
+
+	<script src="app/services/user.service.js"></script>
+	<script src="app/services/auth.service.js"></script>
 </body>
 </html>

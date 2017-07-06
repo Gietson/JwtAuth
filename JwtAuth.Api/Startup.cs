@@ -72,6 +72,8 @@ namespace JwtAuth.Api
 				var dataInitializer = app.ApplicationServices.GetService<IDataInitializer>();
 				dataInitializer.SeedAsync();
 			}
+			app.UseDefaultFiles();
+			app.UseStaticFiles();
 
 			app.UseMvc();
 		}
